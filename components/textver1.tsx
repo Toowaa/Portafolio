@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-
+import { FaGithub } from "react-icons/fa";
 export const Textver1 = () => {
   return (
     <section
-      className="grid h-screen 
+      className="grid  h-screen
     place-content-center gap-2 bg-green-300 px-9 text-black
     "
     >
-      <FlipLink href="#">Twitter</FlipLink>
-      <FlipLink href="#">Linkedln</FlipLink>
-      <FlipLink href="#">Facebook</FlipLink>
-      <FlipLink href="#">Instragram</FlipLink>
+      <FlipLink href="https://github.com/Toowaa">GitHub </FlipLink> 
+      <FlipLink href="https://www.linkedin.com/in/brahanbonilla/">Linkedln</FlipLink>
+      <FlipLink href="mailto:brahanbonilla@gmail.com/">Gmail</FlipLink>
+      <FlipLink href="https://drive.google.com/file/d/1UMDeXWUUV0VzqySmlfc2IWXSLfXe-XJS/view?usp=sharing">Curriculum</FlipLink>
     </section>
   );
 };
