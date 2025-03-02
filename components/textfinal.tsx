@@ -1,37 +1,51 @@
+import { Button } from "@heroui/react";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-export const Letras = () => {
+export const Letras = ({
+  setText,
+}: {
+  setText: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
-    <section className="gap-2 h-screen place-content-center bg-[#F7F9F7] items-center text-[#000000]">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          heading="GitHub"
-          subheading="Explore my projects and contributions"
-          imgSrc="links/git.webp"
-          href="https://github.com/Toowaa"
-        />
-        <Link
-          heading="LinkedIn"
-          subheading="Connect with me professionally"
-          imgSrc="links/linked.webp"
-          href="https://www.linkedin.com/in/brahanbonilla"
-        />
-        <Link
-          heading="Gmail Direct"
-          subheading="Let's collaborate—reach out!"
-          imgSrc="links/correo.webp"
-          href="mailto:brahanbonilla@gmail.com"
-        />
-        <Link
-          heading="Curriculum"
-          subheading="Discover my experience and skills"
-          imgSrc="links/curri.webp"
-          href="https://drive.google.com/file/d/1UMDeXWUUV0VzqySmlfc2IWXSLfXe-XJS/view?usp=sharing"
-        />
-      </div>
-    </section>
+    <div className="relative">
+      <Button
+        onPress={() => setText(true)} // Actualizar el estado al hacer clic
+        className="absolute top-0 right-0 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white font-bold py-2 px-4 rounded-full hover:shadow-xl hover:shadow-pink-500 m-4"
+      >
+        See other Style
+      </Button>
+
+      <section className="grid h-screen place-content-center bg-[#F7F9F7] items-center text-[#000000]">
+        <div className="mx-auto max-w-5xl">
+          <Link
+            heading="GitHub"
+            subheading="Explore my projects and contributions"
+            imgSrc="links/git.webp"
+            href="https://github.com/Toowaa"
+          />
+          <Link
+            heading="LinkedIn"
+            subheading="Connect with me professionally"
+            imgSrc="links/linked.webp"
+            href="https://www.linkedin.com/in/brahanbonilla"
+          />
+          <Link
+            heading="Gmail Direct"
+            subheading="Let's collaborate—reach out!"
+            imgSrc="links/correo.webp"
+            href="mailto:brahanbonilla@gmail.com"
+          />
+          <Link
+            heading="Curriculum"
+            subheading="Discover my experience and skills"
+            imgSrc="links/curri.webp"
+            href="https://drive.google.com/file/d/1UMDeXWUUV0VzqySmlfc2IWXSLfXe-XJS/view?usp=sharing"
+          />
+        </div>
+      </section>
+    </div>
   );
 };
 
@@ -101,8 +115,7 @@ const Link = ({
                 initial: { x: 0 },
                 whileHover: { x: 16 },
               }}
-             
-              transition={{ type: "spring"}}
+              transition={{ type: "spring" }}
               className="inline-block"
               key={i}
             >
@@ -131,8 +144,6 @@ const Link = ({
         className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
         alt={`Image representing a link for ${heading}`}
       />
-
-  
     </motion.a>
   );
 };

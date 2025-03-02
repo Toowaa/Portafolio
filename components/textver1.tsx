@@ -1,17 +1,23 @@
+import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-export const Textver1 = () => {
+export const Textver1 = ({ setText }: { setText: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
-    <section
-      className="grid  h-screen
-    place-content-center gap-2 bg-green-300 px-9 text-black
-    "
-    >
-      <FlipLink href="https://github.com/Toowaa">GitHub </FlipLink> 
-      <FlipLink href="https://www.linkedin.com/in/brahanbonilla/">Linkedln</FlipLink>
-      <FlipLink href="mailto:brahanbonilla@gmail.com/">Gmail</FlipLink>
-      <FlipLink href="https://drive.google.com/file/d/1UMDeXWUUV0VzqySmlfc2IWXSLfXe-XJS/view?usp=sharing">Curriculum</FlipLink>
-    </section>
+    <div className="relative">
+      
+      <Button         onPress={() => setText(false)} // Actualizar el estado al hacer clic
+        className="absolute top-0 right-0 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white font-bold py-2 px-4 rounded-full hover:shadow-xl hover:shadow-pink-500 m-4">
+        See other Style
+      </Button>
+
+     
+      <section className="grid h-screen place-content-center gap-2 bg-green-300 text-black">
+        <FlipLink href="https://github.com/Toowaa">GitHub</FlipLink>
+        <FlipLink href="https://www.linkedin.com/in/brahanbonilla/">Linkedln</FlipLink>
+        <FlipLink href="mailto:brahanbonilla@gmail.com/">Gmail</FlipLink>
+        <FlipLink href="https://drive.google.com/file/d/1UMDeXWUUV0VzqySmlfc2IWXSLfXe-XJS/view?usp=sharing">Curriculum</FlipLink>
+      </section>
+    </div>
   );
 };
 
