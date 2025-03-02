@@ -1,11 +1,20 @@
-'use client'
+"use client";
+import { Letras } from "@/components/textfinal";
 import { Textver1 } from "@/components/textver1";
-
+import { HoverImageLinks } from "@/components/textver2";
+import React from "react";
 
 export default function Home() {
+  const [istext, setText] = React.useState(true);
   return (
-    <div >
-      <Textver1 />
-    </div>
+    <>
+      {istext ? (
+        <div>
+          <Textver1 setText={setText} />
+          </div>
+      ) : (
+        <Letras setText={setText} />
+      )}
+    </>
   );
 }
