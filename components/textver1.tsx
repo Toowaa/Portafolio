@@ -1,6 +1,5 @@
 import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
 export const Textver1 = ({ setText }: { setText: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
     <div className="relative">

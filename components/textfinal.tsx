@@ -1,7 +1,6 @@
 import { Button } from "@heroui/react";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-import { FiArrowRight } from "react-icons/fi";
 
 export const Letras = ({
   setText,
