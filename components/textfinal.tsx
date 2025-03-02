@@ -16,8 +16,8 @@ export const Letras = ({
         See other Style
       </Button>
 
-      <section className="grid h-screen place-content-center bg-[#F7F9F7] items-center text-[#000000]">
-        <div className="mx-auto max-w-5xl">
+      <section className=" h-screen place-content-center bg-[#F7F9F7] items-center text-[#000000]">
+        <div className="mx-auto max-w-5xl px-16 md:px-0">
           <Link
             heading="GitHub"
             subheading="Explore my projects and contributions"
