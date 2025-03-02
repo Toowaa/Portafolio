@@ -72,7 +72,7 @@ const Link = ({
   const handleMouseMove = (e: React.MouseEvent): void => {
     if (!ref.current) return; // Verifica que el ref no sea null
   
-    const rect = ref.current.getBoundingClientRect();
+    const rect = ref.current?.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
   
