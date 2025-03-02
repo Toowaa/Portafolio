@@ -59,8 +59,7 @@ const Link = ({
   subheading: string;
   href: string;
 }) => {
-  const ref = useRef(null);
-
+  const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -71,21 +70,22 @@ const Link = ({
   const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
 
   const handleMouseMove = (e: React.MouseEvent): void => {
+    if (!ref.current) return; // Verifica que el ref no sea null
+  
     const rect = ref.current.getBoundingClientRect();
-
     const width = rect.width;
     const height = rect.height;
-
+  
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-
+  
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
-
+  
     x.set(xPct);
     y.set(yPct);
   };
-
+  
   return (
     <motion.a
       href={href}
